@@ -115,7 +115,7 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 echo "$(tput bold)$(tput setaf 4)creating project specific namespace$(tput sgr 0)"
 
-kubectl create namespace accis
+kubectl create namespace syzygy
 
 ## create redis statefulset
 
