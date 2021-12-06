@@ -6,7 +6,7 @@ sudo apt update -y
 
 sudo apt install postgresql postgresql-contrib -y
 
-echo "$(tput bold)$(tput setaf 4)Welcome to Accis Setup: PostgreSQL Database Installation.$(tput sgr 0)"
+echo "$(tput bold)$(tput setaf 4)Welcome to Syzygy Setup: PostgreSQL Database Installation.$(tput sgr 0)"
 
 set -e
 echo "Enter the Database Name: "
@@ -35,7 +35,7 @@ sudo systemctl restart postgresql.service
 
 ## Setting up environment variables
 
-echo "$(tput bold)$(tput setaf 4)Welcome to Accis Setup: Let's get your environment ready..!!$(tput sgr 0)"
+echo "$(tput bold)$(tput setaf 4)Welcome to Syzygy Setup: Let's get your environment ready..!!$(tput sgr 0)"
 
 echo "Server Hostname:"
 hostname
@@ -292,7 +292,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
     name: staticfiles
-    namespace: accis
+    namespace: syzygy
 spec:
   capacity:
     storage: 1Gi
@@ -732,7 +732,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-main
-  namespace: accis
+  namespace: syzygy
 data:
   nginx.conf: |
     user  nginx;
@@ -986,7 +986,7 @@ spec:
   tls:
   - hosts:
     - '*.syzygy.com'
-    secretName: accis-cert
+    secretName: syzygy-cert
 ---
 EOF
 
